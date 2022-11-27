@@ -9,9 +9,9 @@ import java.util.function.BiConsumer;
 public class BiConsumerExample {
 
     private static void namesAndActivities(){
-        BiConsumer<String, List<String>> studentBiConsumer = (name, activities) -> System.out.println(name + " " + activities);
+        BiConsumer<String, List<String>> printNameAndActivities = (name, activities) -> System.out.println(name + " " + activities);
         List<Student> studentList = StudentDatabase.getStudents();
-        studentList.forEach(student -> studentBiConsumer.accept(student.getName(), student.getActivities()));
+        studentList.forEach(student -> printNameAndActivities.accept(student.getName(), student.getActivities()));
     }
 
     public static void main(String[] args) {

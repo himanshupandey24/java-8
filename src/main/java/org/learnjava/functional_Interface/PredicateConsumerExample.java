@@ -13,17 +13,17 @@ public class PredicateConsumerExample {
     private Predicate<Student> checkGradeLevel = student -> student.getGradeLevel() >= 3;
     private Predicate<Student> checkGpaLevel = student -> student.getGpa() >= 3.9;
 
-    private BiConsumer<String, List<String>> studentBiConsumer = (name, activities) -> System.out.println(name+ " " +activities);
+    private BiConsumer<String, List<String>> printNameAndActivities = (name, activities) -> System.out.println(name+ " " +activities);
 
 
-    private Consumer<Student> studentConsumer = student -> {
+    private Consumer<Student> printStudentFilterByGradeAndGpa = student -> {
         if(checkGpaLevel.and(checkGradeLevel).test(student)){
-            studentBiConsumer.accept(student.getName(), student.getActivities());
+            printNameAndActivities.accept(student.getName(), student.getActivities());
         }
     };
 
     public void printNameAndActivities(List<Student> studentList){
-        studentList.forEach(studentConsumer);
+        studentList.forEach(printStudentFilterByGradeAndGpa);
     }
 
     public static void main(String[] args) {

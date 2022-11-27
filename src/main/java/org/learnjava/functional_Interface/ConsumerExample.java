@@ -8,14 +8,14 @@ import java.util.function.Consumer;
 
 public class ConsumerExample {
 
-    private static Consumer<Student> c3 = student -> System.out.println(student);
-    private static Consumer<Student> c4 = student -> System.out.println(student.getName().toUpperCase());
+    private static Consumer<Student> printStudent = student -> System.out.println(student);
+    private static Consumer<Student> toUpperCase = student -> System.out.println(student.getName().toUpperCase());
 
-    private static Consumer<Student> c5 = student -> System.out.println(student.getActivities());
+    private static Consumer<Student> getActivities = student -> System.out.println(student.getActivities());
 
     private static void printStudents(){
         List<Student> studentsList = StudentDatabase.getStudents();
-        studentsList.forEach(c3);
+        studentsList.forEach(printStudent);
         System.out.println();
         studentsList.forEach(student -> System.out.println(student));
     }
@@ -24,26 +24,26 @@ public class ConsumerExample {
         List<Student> studentsList = StudentDatabase.getStudents();
         studentsList.forEach(student -> System.out.println(student.getName().toUpperCase()));
         System.out.println();
-        studentsList.forEach(c4);
+        studentsList.forEach(toUpperCase);
     }
 
     private static void printActivities(){
         List<Student> studentsList = StudentDatabase.getStudents();
         studentsList.forEach(student -> System.out.println(student.getName() + " -> " + student.getActivities()));
         System.out.println();
-        studentsList.forEach(c5);
+        studentsList.forEach(getActivities);
     }
 
     private static void printNameAndActivities(){
         List<Student> studentsList = StudentDatabase.getStudents();
-        studentsList.forEach(c4.andThen(c5));
+        studentsList.forEach(toUpperCase.andThen(getActivities));
     }
 
     private static void printNameAndActivitiesUsingConditions(){
         List<Student> studentList = StudentDatabase.getStudents();
         studentList.forEach(student -> {
             if(student.getGradeLevel() >= 3 && student.getGpa() > 3.9){
-                c4.andThen(c5).accept(student);
+                toUpperCase.andThen(getActivities).accept(student);
             }
         });
     }

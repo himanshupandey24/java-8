@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class PredicateStudentExample {
-    private static Predicate<Student> gradeLevelGreaterThan3 = student -> student.getGradeLevel() >= 3;
-    private static Predicate<Student> gpaGreaterThan4 = student -> student.getGpa() > 3.9;
+    static Predicate<Student> gradeLevelGreaterThan_X = student -> student.getGradeLevel() >= 3;
+    static Predicate<Student> gpaGreaterThan_X = student -> student.getGpa() > 3.9;
 
     private static void filerStudentByGrade(){
         List<Student> studentList = StudentDatabase.getStudents();
         studentList.forEach(student -> {
-            if(gradeLevelGreaterThan3.test(student))
+            if(gradeLevelGreaterThan_X.test(student))
                 System.out.println(student);
         });
     }
@@ -21,7 +21,7 @@ public class PredicateStudentExample {
     private static void filerStudentByGpa(){
         List<Student> studentList = StudentDatabase.getStudents();
         studentList.forEach(student -> {
-            if(gpaGreaterThan4.test(student))
+            if(gpaGreaterThan_X.test(student))
                 System.out.println(student);
         });
     }
@@ -29,7 +29,7 @@ public class PredicateStudentExample {
     private static void filerStudentByGrade_Gpa(){
         List<Student> studentList = StudentDatabase.getStudents();
         studentList.forEach(student -> {
-            if(gpaGreaterThan4.and(gradeLevelGreaterThan3).test(student))
+            if(gpaGreaterThan_X.and(gradeLevelGreaterThan_X).test(student))
                 System.out.println(student);
         });
     }

@@ -11,13 +11,13 @@ public class BiPredicateExample {
 
     private static BiPredicate<Integer, Double> filterByGrade_Gpa = (gradeLevel, gpa) -> gradeLevel >= 3 && gpa >= 3.9;
 
-    private static Consumer<Student> filterStudentsConsumer = student -> {
+    private static Consumer<Student> printStudentFilterByGrade_Gpa = student -> {
         if(filterByGrade_Gpa.test(student.getGradeLevel(), student.getGpa()))
             System.out.println(student);
     };
     private static void filterStudents(){
         List<Student> studentList = StudentDatabase.getStudents();
-        studentList.forEach(filterStudentsConsumer);
+        studentList.forEach(printStudentFilterByGrade_Gpa);
     }
     public static void main(String[] args) {
         filterStudents();
