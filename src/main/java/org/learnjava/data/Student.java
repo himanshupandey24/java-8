@@ -22,6 +22,9 @@ public class Student {
 
     }
 
+    public Student(String s) {
+    }
+
     public String getName() {
         return name;
     }
