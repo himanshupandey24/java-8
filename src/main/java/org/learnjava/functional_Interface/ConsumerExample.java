@@ -8,38 +8,38 @@ import java.util.function.Consumer;
 
 public class ConsumerExample {
 
-    static Consumer<Student> c3 = student -> System.out.println(student);
-    static Consumer<Student> c4 = student -> System.out.println(student.getName().toUpperCase());
+    private static Consumer<Student> c3 = student -> System.out.println(student);
+    private static Consumer<Student> c4 = student -> System.out.println(student.getName().toUpperCase());
 
-    static Consumer<Student> c5 = student -> System.out.println(student.getActivities());
+    private static Consumer<Student> c5 = student -> System.out.println(student.getActivities());
 
-    static void printStudents(){
+    private static void printStudents(){
         List<Student> studentsList = StudentDatabase.getStudents();
         studentsList.forEach(c3);
         System.out.println();
         studentsList.forEach(student -> System.out.println(student));
     }
 
-    static void printStudentNames(){
+    private static void printStudentNames(){
         List<Student> studentsList = StudentDatabase.getStudents();
         studentsList.forEach(student -> System.out.println(student.getName().toUpperCase()));
         System.out.println();
         studentsList.forEach(c4);
     }
 
-    static void printActivities(){
+    private static void printActivities(){
         List<Student> studentsList = StudentDatabase.getStudents();
         studentsList.forEach(student -> System.out.println(student.getName() + " -> " + student.getActivities()));
         System.out.println();
         studentsList.forEach(c5);
     }
 
-    static void printNameAndActivities(){
+    private static void printNameAndActivities(){
         List<Student> studentsList = StudentDatabase.getStudents();
         studentsList.forEach(c4.andThen(c5));
     }
 
-    static void printNameAndActivitiesUsingConditions(){
+    private static void printNameAndActivitiesUsingConditions(){
         List<Student> studentList = StudentDatabase.getStudents();
         studentList.forEach(student -> {
             if(student.getGradeLevel() >= 3 && student.getGpa() > 3.9){
