@@ -11,7 +11,8 @@ public class StudentDatabase {
             2,
             3.6,
             "male",
-            Arrays.asList("swimming", "basketball","volleyball"));
+            Arrays.asList("swimming", "basketball","volleyball"),
+            11);
 
     public static List<Student> getStudents(){
         /**
@@ -22,14 +23,16 @@ public class StudentDatabase {
                 2,
                 3.6,
                 "Male",
-                Arrays.asList("swimming", "basketball","volleyball"));
+                Arrays.asList("swimming", "basketball","volleyball"),
+                12);
 
         Student student2 = new Student(
                 "Jenny",
                 2,
                 3.8,
                 "female",
-                Arrays.asList("swimming", "gymnastics","soccer"));
+                Arrays.asList("swimming", "gymnastics","soccer"),
+                13);
 
         /**
          * 3rd grade students
@@ -39,14 +42,16 @@ public class StudentDatabase {
                 3,
                 4.0,
                 "female",
-                Arrays.asList("swimming", "gymnastics","aerobics"));
+                Arrays.asList("swimming", "gymnastics","aerobics"),
+                14);
 
         Student student4 = new Student(
                 "Dave",
                 3,
                 4.0,
                 "male",
-                Arrays.asList("swimming", "gymnastics","soccer"));
+                Arrays.asList("swimming", "gymnastics","soccer"),
+                15);
         /**
          * 4th grade students
          */
@@ -55,14 +60,16 @@ public class StudentDatabase {
                 4,
                 3.5,
                 "female",
-                Arrays.asList("swimming", "dancing","football"));
+                Arrays.asList("swimming", "dancing","football"),
+                16);
 
         Student student6 = new Student(
                 "James",
                 4,
                 3.9,
                 "male",
-                Arrays.asList("swimming", "basketball","baseball","football"));
+                Arrays.asList("swimming", "basketball","baseball","football"),
+                17);
 
         List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6);
 
