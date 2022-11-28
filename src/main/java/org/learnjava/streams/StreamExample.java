@@ -27,11 +27,12 @@ public class StreamExample {
         //Collect is responsible for initiating stream pipeline, Streams are lazy loaded in nature
 
         Map<String, List<String>> studentActivities2 = StudentDatabase.getStudents()
-                .stream().peek(student -> {
-                    System.out.println(student);
-                }).filter(filterByGpa.and(filterByGrade))
+                .stream()
+                .peek(student -> System.out.println("After 1st Stream: " + student))
+                .filter(filterByGpa.and(filterByGrade)).
+                peek(student -> System.out.println("After filter method: " + student))
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
 
-        System.out.println(studentActivities2);
+        //System.out.println(studentActivities2);
     }
 }
