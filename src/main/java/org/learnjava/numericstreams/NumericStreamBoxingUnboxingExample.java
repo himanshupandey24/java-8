@@ -20,6 +20,7 @@ public class NumericStreamBoxingUnboxingExample {
         int sum = integerList.stream()
                 .mapToInt(Integer::intValue)
                 .sum();
+
         Optional<Integer> sum1 = integerList.stream()
                 .reduce((x, y) -> x+y);
         return sum;
