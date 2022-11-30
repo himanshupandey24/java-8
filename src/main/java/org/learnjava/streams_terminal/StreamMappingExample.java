@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class StreamaMappingExample {
+public class StreamMappingExample {
     public static void main(String[] args) {
+
         Set<String> namesSet = StudentDatabase.getStudents()
                 .stream()
                 .collect(Collectors.mapping(Student::getName, Collectors.toSet()));
