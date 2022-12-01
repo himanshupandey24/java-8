@@ -2,6 +2,7 @@ package org.learnjava.data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class StudentDatabase {
@@ -13,6 +14,18 @@ public class StudentDatabase {
             "male",
             Arrays.asList("swimming", "basketball","volleyball"),
             11);
+
+    public static Optional<Student> getOptionalStudent(){
+        Student student = new Student("Adam",
+                2,
+                4.0,
+                "male",
+                Arrays.asList("swimming", "basketball","volleyball"));
+
+        Bike bike = new Bike("Client123", "Client123");
+        student.setBike(Optional.of(bike));
+        return Optional.of(student);
+    }
 
     public static List<Student> getStudents(){
         /**
