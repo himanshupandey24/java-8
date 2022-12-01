@@ -16,7 +16,7 @@ public class OptionalOfEmptyNullableExample {
         return Optional.empty();
     }
     public static void main(String[] args) {
-         System.out.println(ofNullable().get()); //NoSuchElementException: No value present
+         //System.out.println(ofNullable().get()); //NoSuchElementException: No value present
          System.out.println(of());
          System.out.println(empty().get()); //NoSuchElementException: No value present
     }
