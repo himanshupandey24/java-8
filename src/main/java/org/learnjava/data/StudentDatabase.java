@@ -35,7 +35,7 @@ public class StudentDatabase {
                 "Adam",
                 2,
                 3.6,
-                "Male",
+                "male",
                 Arrays.asList("swimming", "basketball","volleyball"),
                 12);
 
