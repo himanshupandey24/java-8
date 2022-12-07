@@ -100,7 +100,7 @@ public class LocalDateExample {
                 // maps to the first friday of the week
         );
 
-        System.out.println("\nIs Supported : " + localDate.isSupported(ChronoUnit.DAYS));
+        System.out.println("\nIs Supported : " + localDate.isSupported(ChronoUnit.MINUTES));
 
         //Additional Support Methods
 
