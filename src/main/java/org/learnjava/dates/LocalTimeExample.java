@@ -35,7 +35,7 @@ public class LocalTimeExample {
                 + "\nModify with localTime.with(LocalTime.MIDNIGHT) : " + localTime.with(LocalTime.MIDNIGHT)
 
                 + "\nModify with localTime.with(ChronoField.HOUR_OF_DAY,22): "
-                + localTime.with(ChronoField.HOUR_OF_DAY,22)
+                + localTime.with(ChronoField.HOUR_OF_DAY,23)
 
                 + "\nModify Minutes : " + localTime.plus(2, ChronoUnit.MINUTES)
                 + "\nModify with Hour : " + localTime.withHour(2)

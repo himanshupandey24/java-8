@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoField;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateTimeExample {
@@ -12,6 +11,7 @@ public class LocalDateTimeExample {
     public static void main(String[] args) {
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println("\nlocalDateTime : " + localDateTime);
+
         LocalDateTime localDateTime1 = LocalDateTime.of(2022,12,02,22,30,30);
         System.out.println("\nlocalDateTime1 : " + localDateTime1);
 
