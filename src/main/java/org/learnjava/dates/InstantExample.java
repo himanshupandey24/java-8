@@ -2,8 +2,6 @@ package org.learnjava.dates;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.Period;
 
 public class InstantExample {
     public static void main(String[] args){
