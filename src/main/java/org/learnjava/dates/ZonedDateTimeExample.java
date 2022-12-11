@@ -44,5 +44,20 @@ public class ZonedDateTimeExample {
                 + LocalDateTime.ofInstant(Instant.now(), ZoneId.of("America/Denver"))
         );
 
+        //LocalDateTime to ZonedDateTime
+
+        ZonedDateTime zonedDateTime1 = LocalDateTime.now().atZone(ZoneId.of("Asia/Calcutta"));
+        System.out.println("\nLocalDateTime to ZonedDateTime : " + zonedDateTime1);
+
+        ZonedDateTime zonedDateTime2 =
+                LocalDateTime.now(ZoneId.of("America/Denver")).atZone(ZoneId.of("America/Denver"));
+        System.out.println("\nDenver LocalDateTime to ZonedDateTime : " + zonedDateTime2);
+
+        ZonedDateTime zonedDateTime3 = Instant.now().atZone(ZoneId.of("America/Denver"));
+        System.out.println("\nInstant to Denver ZonedDateTime: " + zonedDateTime3
+                + "\nInstant to India ZonedDateTime : " + Instant.now().atZone(ZoneId.of("Asia/Calcutta"))
+        );
+
+
     }
 }
