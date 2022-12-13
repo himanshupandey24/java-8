@@ -10,10 +10,13 @@ public class DateToLocalDateExample {
         //java.util.Date to java.time.LocalDate
 
         Date date = new Date();
+
         System.out.println("\nJava.Util.Date : " + date
                 + "\nConverted Local Date : "
                 + date.toInstant().atZone(ZoneId.of("Asia/Calcutta")).toLocalDate()
         );
+
+        //LocalDate to java.util.date
 
         Date date1 = new Date().from(
                 LocalDate.now()
